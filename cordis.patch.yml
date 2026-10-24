@@ -1,0 +1,12 @@
+# dsh-redstar-boot — DSH bundle patch
+#
+# 把插件的 Host 半侧挂进当前 profile 的配置树。
+# 客户端半侧由 package.json 的 dsh.client 自动组装 bundle，这里不用写。
+#
+# 安装：
+#   dsh plugin --profile web add dsh-redstar-boot
+# 本地安装：
+#   dsh plugin --profile web add ./dsh-redstar-boot-0.1.0.tgz
+- insert:
+    - id: dsh-redstar-boot
+      name: dsh-redstar-boot

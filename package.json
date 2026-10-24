@@ -1,0 +1,52 @@
+{
+  "name": "dsh-redstar-boot",
+  "version": "0.1.0",
+  "description": "黑红开机动画：黑红底、快速旋转五角星、数据流自检、六步授权、中俄双语「欢迎上线，同志」光标打字。Black-red boot sequence with a spinning red star, data-stream checks and a typed bilingual welcome.",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek-harness-desktop",
+    "startup",
+    "splash",
+    "boot-animation",
+    "red-star",
+    "black-red"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "test",
+    "preview/index.html",
+    "cordis.patch.yml",
+    "README.md",
+    "README.en.md",
+    "CREDITS.md",
+    "LICENSE",
+    "docs"
+  ],
+  "scripts": {
+    "test": "node test/smoke-host.mjs && node test/smoke-splash.mjs && node test/smoke-client.mjs && node test/smoke-desktop-boot.mjs"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ],
+      "platform": "web"
+    }
+  }
+}
